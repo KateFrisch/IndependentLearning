@@ -1,0 +1,324 @@
+/* Light Mode */
+:root {
+    --background: #dce9ea;
+    --side-color: #A7BBBC;
+    --name-color: #345511;
+    --color-1: #748b5d;
+    --color-2: #57723b;
+    --color-3: #345511;
+    --text-dark: #181612;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Trebuchet MS', Arial;
+    background-color: var(--side-color);
+    color: var(--text-dark);
+    background-image: url(../images/waterBackground.jpeg);
+    background-size: 25%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-end;
+}
+
+.page {
+    flex-grow: 1;
+    margin: auto;
+    width: 900px;
+/*     width: 80%; */
+    background-color: var(--background);
+    padding-bottom: 30px;
+}
+
+header {
+    /* margin-top: 20px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gafata', Arial;
+}
+
+    header h1 {
+        font-family: 'Aclonica', Arial;
+        font-size: 50pt;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
+        color: var(--name-color);
+        text-shadow: var(--text-dark) 2px 2px 2px;
+    }
+
+    header h2 {
+        padding-top: 0px;
+        margin-top: 0px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Gafata';
+    }
+/* Nav code */
+nav {
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--text-dark);
+    background-color: var(--color-1);
+    width: 100%
+}
+
+    nav ul,
+    nav li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    nav ul {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+        nav ul li {
+            position: relative;
+            /* width: 150px; */
+            font-size: large;
+        }
+
+        nav ul a {
+            display: block;
+            padding: 10px 5px;
+            color: var(--text-dark);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav ul ul {
+            background: #FFFFFF;
+            position: absolute;
+            left: -9999px;
+            display: flex;
+            flex-direction: column;
+            border-bottom: 2px solid var(--text-dark);
+        }
+
+        nav ul li:hover ul {
+            left: 0;
+            text-decoration: none;
+            color: var(--text-dark);
+        }
+
+        nav ul li:hover a {
+            background: var(--color-2);
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: x-large;
+        }
+
+        nav ul li:hover ul li a:hover {
+            color: var(--background);
+            background: var(--color-3);
+        }
+
+/* Nav code end */
+
+a {
+    background-color: inherit;
+    text-decoration: underline;
+    color: var(--color-3)
+}
+
+    a:hover {
+        background-color: inherit;
+        text-decoration: underline;
+        color: var(--link-hover)
+    }
+
+table,
+th,
+td {
+    border: 1px solid var(--color-2);
+}
+
+table {
+    margin: auto;
+    width: auto;
+}
+
+form {
+    margin: auto;
+    width: 80%;
+}
+
+.page_content {
+    margin: auto;
+    width: 90%;
+}
+
+.side_flex_container {
+    display: flex;
+}
+
+.side_border {
+    background: url(../images/Wallpaper2.jpg);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    width: 20%;
+    border-radius: 15px;
+    margin-right: 20px;
+}
+
+.col {
+   
+}
+
+.main_photo {
+    flex: none;
+    margin-left: 10px;
+    height: 320px;
+    float: right;
+    border: 20px outset black;
+    border-image: url(../images/imageBorder.png) 100;
+}
+
+.two_colum_flex_container {
+    display: flex;
+    justify-content:space-between;
+}
+
+.photo {
+    margin: auto;
+    /*    width: 90%;*/
+}
+
+    .photo .image_caption {
+        max-width: 100%;
+    }
+
+    .photo img {
+        max-width: 100%;
+    }
+
+.design_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 50px 0px;
+}
+
+    .design_row img {
+        width: 50%;
+    }
+
+    .design_row div {
+        width: 45%;
+    }
+
+    .design_row h3 {
+        margin-top: 0px;
+    }
+
+    .design_row a {
+        text-decoration: none;
+        background-color: var(--color-3);
+        color: #FFFFFF;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .design_row p {
+        background-color: var(--color-1);
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .design_row a:hover {
+        background-color: var(--color-2);
+        color: var(--background);
+    }
+
+footer {
+    /* position:absolute;
+    bottom:0; */
+    /* margin-top:20px; */
+    margin-top: 20px;
+    margin: auto;
+    width: 860px;
+    background-color: var(--color-1);
+    padding: 10px 20px;
+    font-family: 'Gafata', Arial;
+}
+
+
+.gallery {
+  
+}
+
+    .gallery form {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        /*    flex-wrap: wrap;*/
+            justify-content: space-between;
+        /*    align-items: center;*/
+
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .gallery input {
+        border: solid var(--color-2) 10px;
+        width: 170px;
+        height: 200px;
+        color: rgba(0,0,0,0);
+        background-position: center;
+        background-size: 100%;
+        margin: 10px;
+/*        transition: width 0.3s ease-out, height 0.3s ease-out;*/
+        transition: background-size 0.3s;
+        
+    }
+
+        .gallery input:hover {
+            border: solid var(--color-1) 10px;
+            /*            width: 200px;
+            height: 230px;*/
+            background-size: 140%;
+        }
+
+        .gallery input:active {
+            border: solid var(--color-2) 10px;
+            opacity: 1;
+            /*            width: 170px;
+            height: 200px;*/
+            background-size: 100%;
+        }
+
+    /*.gallery a img {
+        border: outset var(--color-1) 10px;*/
+        /* width: 90%; */
+        /*height: 250px;
+        transition: height 1s ease-out;
+    }
+
+    .gallery a:hover img {
+        border: outset var(--color-2) 10px;
+        height: 400px;
+    }
+
+    .gallery a:active img {
+        border: inset var(--color-1) 10px;
+        opacity: 0.75;
+    }*/
+
+#portriatImage {
+    background-image: url(../images/ValueAndColor_Thumbnail.jpg);
+}
+
+#paintingImage {
+    background-image: url(../images/Painting_Thumbnail.jpeg);
+}
+
+#lakeImage {
+    background-image: url(../images/Lake_Thumbnail.jpg);
+}

@@ -1,0 +1,190 @@
+﻿@page
+@model MyWebpages.Pages.Examples.CoursesCodeModel
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h2>Code behind the Courses Webpage</h2>
+
+<div class="col">
+    <p>
+        The code below is a section from the .cshtml file that formats and displays
+        as html on the page. The &#64; symbols are when the variables from the c# file
+        are access from this page.
+    </p>
+
+    <pre>
+    &lt;h3&gt;Courses by Subject Area&lt;/h3&gt;
+    &lt;ul&gt;
+        &#64;foreach (Models.SubjectList subjectList in &#64;Model.Subjects)
+        {
+            &lt;li&gt;
+                &#64;subjectList.SubjectName
+                &lt;ul&gt;
+                    &#64;foreach (String name in subjectList.CourseNames)
+                    {
+                        &lt;li&gt;&#64;name&lt;/li&gt;
+                    }
+
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        }
+    &lt;/ul&gt;
+    </pre>
+
+    <p>In the c# file are objects that conatin all the information that is needed to display.</p>
+
+    <pre>
+    public class CoursesModel : PageModel
+    {
+        public List<SubjectList> Subjects { get; set; }
+        public List<SemestersList> Semesters { get; set; }
+
+        public void OnGet()
+        {
+            Subjects = new List<SubjectList>  {
+                new SubjectList()
+                {
+                    SubjectName = "Computer Science",
+                    CourseNames = new List<string> {
+                        "Software Engineering",
+                        "Web Design",
+                        "Database Management Systems",
+                        "Web Application Development",
+                        "Design and Analysis of Algorithms",
+                        "Advanced Programming",
+                        "Assembly Language and Computer Architecture",
+                        "Data Structures",
+                        "Intro to Software Development",
+                        "Multimedia Python Programming"
+                    } },
+                new SubjectList() {
+                    SubjectName = "Mathematics",
+                    CourseNames = new List<string> {
+                        "Calculus I",
+                        "Calculus II",
+                        "Discrete Structures",
+                        "Theory of Computation",
+                        "Linear Algebra",
+                        "Foundation of Mathematics"
+                    } },
+                new SubjectList() {
+                    SubjectName = "Creative Arts",
+                    CourseNames = new List<string> {
+                        "Digital Art and Design",
+                        "Painting",
+                        "Drawing",
+                        "Basic Design",
+                        "Modern Dance",
+                        "Ballet"
+                    } }
+
+
+            };
+
+            Semesters = new List<SemestersList> {
+                new SemestersList()
+                {
+                    SemesterName = "Spring 2022",
+                    CourseNames = new List<string>
+                    {
+                        "Software Engineering II",
+                        "Web Design",
+                        "Digital Art and Design",
+                        "Communications Law and Ethics"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Fall 2021",
+                    CourseNames = new List<string>
+                    {
+                        "Software Engineering I",
+                        "Painting I",
+                        "Astronomy",
+                        "The Short Story"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Spring 2021",
+                    CourseNames = new List<string>
+                    {
+                       "Drawing I",
+                        "Web Application Development",
+                        "3D Virtual Programming",
+                        "Theory of Computation",
+                        "History of Satan"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Fall 2020",
+                    CourseNames = new List<string>
+                    {
+                        "Assembly Language and Computer Architecture",
+                        "Database Management Systems",
+                        "Business Statistics I",
+                        "The Family"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Spring 2020",
+                    CourseNames = new List<string>
+                    {
+                       "Modern Dance",
+                        "Advanced Programming",
+                        "Design+Analysis of Algorithms",
+                        "Game Programming in Unity",
+                        "Intro to Religious Thought"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Fall 2019",
+                    CourseNames = new List<string>
+                    {
+                        "Basic Design I",
+                        "Ballet",
+                        "Data Structures",
+                        "Discrete Structures",
+                        "Philosophy and the Human Being"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Spring 2019",
+                    CourseNames = new List<string>
+                    {
+                        "Digital Photography I",
+                        "Intro to Software Development",
+                        "FYSM 101: Nerd Knowledge",
+                        "Linear Algebra",
+                        "Foundation of Mathematics"
+                    }
+                },
+                new SemestersList()
+                {
+                    SemesterName = "Fall 2018",
+                    CourseNames = new List<string>
+                    {
+                        "Multimedia Python Programming",
+                        "FYSM 100: Nerd Knowledge",
+                        "West and the World 1500-1900",
+                        "Calculus II",
+                        "Mathematical Problem Solving"
+                    }
+                }
+
+            };
+        }
+    }
+</pre>
+
+    <p>
+        All the information is able to be shored ina different spot than the .cshtml file
+        so it can be easily edited or accessed from another loction rather than manually
+        changing the page.
+    </p>
+</div>

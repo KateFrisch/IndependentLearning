@@ -1,0 +1,30 @@
+﻿@page
+@model MyWebpages.Pages.Gallery.IndexModel
+@{
+    ViewData["Title"] = "Gallery";
+}
+
+<h1>Gallery</h1>
+<div class="gallery">
+    <p>Click on an image below to see the full size photo.</p>
+    <form method="post">
+
+        <input type="submit" name="imageType" value="Portriat" id="portriatImage">
+        <input type="submit" name="imageType" value="Painting" id="paintingImage">
+        <input type="submit" name="imageType" value="Lake" id="lakeImage">
+
+    </form>
+
+
+</div>
+
+<div class="photo">
+    <h2>@Model.Title</h2>
+    <img src=@Model.ImageName alt=@Model.Alt>
+    <p class="image_caption">
+        @Model.Body
+    </p>
+</div>
+
+@*<p class="blog-post-meta">Posted on @Model.Date.ToShortDateString()</p>
+<p>@Model.Body</p>*@

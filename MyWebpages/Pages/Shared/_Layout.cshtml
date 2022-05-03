@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Frisch Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Aclonica" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gafata" rel="stylesheet">
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>Kate Frisch</h1>
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Home</a></li>
+                    <li><a asp-page="/Resume">Resume</a></li>
+                    <li><a asp-page="/Courses">Courses</a></li>
+                    <li>
+                        <a asp-page="/Gallery/Index">Gallery</a>
+                    </li>
+                </ul>
+            </nav>
+
+            @if (ViewData["Title"].Equals("Home page"))
+            {
+                <h2>
+                    Computer Science Major<br>
+                    Siena College
+                </h2>
+            }
+
+        </header>
+        <div class="page_content">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+
+    <footer>
+        <span>Copyright &copy; 2022, <a href="mailto:kj26fris@siena.edu">Katelyn Frisch</a></span>
+    </footer>
+
+
+</body>
+</html>

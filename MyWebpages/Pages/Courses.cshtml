@@ -1,0 +1,52 @@
+﻿@page
+@model CoursesModel
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h2>Courses</h2>
+<p><em>To see what the code behind this page looks like, click this <a asp-page="/Examples/CoursesCode">link</a>.</em></p>
+<div class="two_colum_flex_container">
+
+    <div class="col">
+        <div class="courseList">
+            <h3>Courses by Subject Area</h3>
+            <ul>
+                @foreach (Models.SubjectList subjectList in @Model.Subjects)
+                {
+                    <li>
+                        @subjectList.SubjectName
+                        <ul>
+                            @foreach (String name in subjectList.CourseNames)
+                            {
+                                <li>@name</li>
+                            }
+
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="courseList">
+            <h3>Courses by Semester</h3>
+            <ul>
+                @foreach (Models.SemestersList semesterList in @Model.Semesters)
+                {
+                    <li>
+                        @semesterList.SemesterName
+                        <ul>
+                            @foreach (String name in semesterList.CourseNames)
+                            {
+                                <li>@name</li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</div>
